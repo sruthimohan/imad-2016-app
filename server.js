@@ -15,7 +15,30 @@ var articleOne={
     
     
 };
-
+var HtmlTemplate='<html>
+    <head>
+        <title>{$title}}</title>
+         <link href="/ui/style.css" rel="stylesheet" />
+        
+        
+        
+        
+    </head>
+    <body>
+        <div class='container'>
+            <div>
+                
+                <a href='/'>Home</a>
+            </div>
+            <hr/>
+            <h2>{$heading}}</h2>
+            <p>{$date}}</p>
+           <div> ${content}</div>
+    </body>
+    
+    
+    
+</html>';
 
 
 
