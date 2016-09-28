@@ -4,17 +4,37 @@ var path = require('path');
 
 var app = express();
 app.use(morgan('combined'));
-
-var articleOne={
+var articles={
+ 'article-one':{
     
-    title='Article One|Sruthi Mohan',
-    date='sept.28 2016',
-    heading='Article One',
-    content=' <p>Contents here.Contents here.Contents here.Contents here.Contents here.Contents here.Contents here.Contents here.Contents here.Contents here.Contents here.Contents here.Contents here.</p><p>Contents here.Contents here.Contents here.Contents here.Contents here.Contents here.Contents here.Contents here.Contents here.Contents here.Contents here.Contents here.Contents here.</p><p>Contents here.Contents here.Contents here.Contents here.Contents here.Contents here.Contents here.Contents here.Contents here.Contents here.Contents here.Contents here.Contents here.</p>';
+    title:'Article One|Sruthi Mohan',
+    date:'sept.28 2016',
+    heading:'Article One',
+    content:' <p>Article One Contents here.Contents here.Contents here.Contents here.Contents here.Contents here.Contents here.Contents here.Contents here.Contents here.Contents here.Contents here.Contents here.</p><p>Contents here.Contents here.Contents here.Contents here.Contents here.Contents here.Contents here.Contents here.Contents here.Contents here.Contents here.Contents here.Contents here.</p><p>Contents here.Contents here.Contents here.Contents here.Contents here.Contents here.Contents here.Contents here.Contents here.Contents here.Contents here.Contents here.Contents here.</p>'
     
     
     
-};
+},
+'articl-two':{
+    
+     title:'Article Two|Sruthi Mohan',
+    date:'sept.29 2016',
+    heading:'Article Two',
+    content:' <p>Article Two s Contents here.Contents here.Contents here.Contents here.Contents here.Contents here.Contents here.Contents here.Contents here.Contents here.Contents here.Contents here.Contents here.</p><p>Contents here.Contents here.Contents here.Contents here.Contenhere.Contents here.Contents here.Contents here.Contents here.Contents here.Contents here.Contents here.Contents here.</p><p>Contents here.Contents here.Contents here.Contents here.Contents here.Contents here.Contents here.Contents here.Contents here.Contents here.Contents here.Contents here.Contents here.</p>'
+    
+    
+    
+},
+'article-three':{
+    
+    title:'Article Three|Sruthi Mohan',
+    date:'sept.30 2016',
+    heading:'Article Three',
+    content:' <p>Article Three s Contents here.Contents here.Contents here.Contents here.Contents here.Contents here.Contents here.Contents here.Contents here.Contents here.Contents here.Contents here.Contents here.</p><p>Contents here.Contents here.Contents here.Contents here.Contenhere.Contents here.Contents here.Contents here.Contents here.Contents here.Contents here.Contents here.Contents here.</p><p>Contents here.Contents here.Contents here.Contents here.Contents here.Contents here.Contents here.Contents here.Contents here.Contents here.Contents here.Contents here.Contents here.</p>'
+    
+    
+    
+}};
 
 function(createTemplate(data))
 {
@@ -66,9 +86,9 @@ app.get('/ui/download.jpg', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'download.jpg'));
 });
 
-app.get('/article-one',function(req,res){
-    
-   res.sendFile(path.join(__dirname,'ui','article-one.html')); 
+app.get('/articleName',function(req,res){
+    var articleName=req.param.articleName;
+   res.send(createTemplate(articles[articleName]));
 });
 app.get('/article-two',function(req,res){
     
