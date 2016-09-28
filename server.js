@@ -15,6 +15,16 @@ var articleOne={
     
     
 };
+
+function(createTemplate(data))
+{
+    
+    var title=data.title;
+    var date=data.date;
+    var headinfg=data.heading;
+    var content=data.content;
+    
+    
 var HtmlTemplate='<html>
     <head>
         <title>{$title}}</title>
@@ -39,6 +49,8 @@ var HtmlTemplate='<html>
     
     
 </html>';
+return HtmlTemplate;
+}
 
 
 
