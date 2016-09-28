@@ -86,7 +86,7 @@ app.get('/ui/download.jpg', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'download.jpg'));
 });
 
-app.get('/articleName',function(req,res){
+app.get('/:articleName',function(req,res){
     var articleName=req.param.articleName;
    res.send(createTemplate(articles[articleName]));
 });
