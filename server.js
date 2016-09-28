@@ -19,7 +19,7 @@ app.get('/ui/download.jpg', function (req, res) {
 
 app.get('/article-one',function(req,res){
     
-   res.send('Article one is served here'); 
+   res.sendFile(path.join(_dirname,'ui','article-one.html')); 
 });
 app.get('/article-two',function(req,res){
     
