@@ -17,15 +17,15 @@ app.get('/ui/download.jpg', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'download.jpg'));
 });
 
-app.get('/Article-one',function(req,res){
+app.get('/article-one',function(req,res){
     
    res.send('Article one is served here'); 
 });
-app.get('/Article-two',function(req,res){
+app.get('/article-two',function(req,res){
     
     res.send('Article two is served here');
 });
-app.get('/Article-three',function(req,res){
+app.get('/article-three',function(req,res){
     
     res.send('Article three is served here');
 });
